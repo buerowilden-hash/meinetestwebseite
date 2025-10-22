@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BN Fiber Connect GmbH - FTTx Entstörung & Messtechnik</title>
+  <meta name="description" content="Schnelle Entstörung & präzise Messtechnik – FTTx vom Profi. 24/7 Rufbereitschaft, SLA-fähig.">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- Custom Tailwind Config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            slate: {
+              50: '#f8fafc',
+              100: '#f1f5f9',
+              200: '#e2e8f0',
+              300: '#cbd5e1',
+              500: '#64748b',
+              600: '#475569',
+              700: '#334155',
+              800: '#1e293b',
+              900: '#0f172a',
+              950: '#020617'
+            },
+            orange: {
+              50: '#fff7ed',
+              400: '#fb923c',
+              600: '#ea580c',
+              700: '#c2410c',
+              800: '#9a3412'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  
+  <style>
+    /* Custom CSS */
+    @layer base {
+      * {
+        border-color: #e2e8f0;
+      }
+      body {
+        background-color: white;
+        color: #0f172a;
+      }
+    }
+    
+    .backdrop-blur {
+      backdrop-filter: blur(8px);
+    }
+    
+    /* Smooth scroll */
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    /* Hide form success message initially */
+    #form-success {
+      display: none;
+    }
+    
+    #contact-form.submitted {
+      display: none;
+    }
+    
+    #form-success.show {
+      display: flex;
+    }
+  </style>
+</head>
+<body>
+  <div class="min-h-screen bg-gradient-to-b from-slate-50 via-white to-slate-50 text-slate-800">
+    
+    <!-- Topbar -->
+    <header class="sticky top-0 z-40 backdrop-blur bg-white/60 border-b border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <img src="assets/bn-fiberconnect-logo.png" alt="BN Fiber Connect GmbH Logo" class="h-10 w-auto object-contain">
+          <div>
+            <p class="font-semibold leading-tight">BN Fiber Connect GmbH</p>
+            <p class="text-xs text-slate-500">24/7 Entstörung · FTTx · Messtechnik</p>
+          </div>
+        </div>
+        <nav class="hidden md:flex items-center gap-6 text-sm">
+          <a href="#leistungen" class="hover:text-slate-900">Leistungen</a>
+          <a href="#vorteile" class="hover:text-slate-900">Warum wir</a>
+          <a href="#region" class="hover:text-slate-900">Region</a>
+          <a href="#zert" class="hover:text-slate-900">Zertifikate</a>
+          <a href="#preise" class="hover:text-slate-900">Preise</a>
+          <a href="#kontakt" class="hover:text-slate-900">Kontakt</a>
+        </nav>
+        <div class="flex items-center gap-2">
+          <a href="tel:+49-0000-000000" class="hidden sm:flex items-center gap-2 rounded-2xl bg-orange-600 text-white px-4 py-2 text-sm hover:bg-orange-700 transition">
+            <i data-lucide="phone-call" class="h-4 w-4"></i> 24/7 Hotline
+          </a>
+          <a href="#angebot" class="inline-flex items-center justify-center rounded-2xl bg-slate-900 text-slate-50 hover:bg-slate-900/90 h-9 px-3 text-sm font-medium transition">
+            Angebot anfragen <i data-lucide="arrow-right" class="h-4 w-4 ml-1"></i>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero mit Bauernhof-Hintergrund -->
+    <section class="relative overflow-hidden">
+      <img src="assets/background-farm.jpg" alt="Bauernhof Hintergrund" class="absolute inset-0 -z-10 w-full h-full object-cover opacity-30">
+      <div class="absolute inset-x-0 -top-24 -z-10 h-[28rem] bg-gradient-radial from-slate-900/20 to-transparent"></div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 grid lg:grid-cols-2 gap-10 items-center">
+        <div>
+          <h1 class="text-4xl sm:text-5xl font-bold tracking-tight text-slate-900 drop-shadow-sm">
+            Schnelle Entstörung & präzise Messtechnik – <span class="text-orange-600">FTTx vom Profi</span>
+          </h1>
+          <p class="mt-4 text-lg text-slate-700 bg-white/60 p-2 rounded-xl inline-block">
+            Wir beheben Glasfaser‑Störungen, installieren und warten Netze – mit zertifizierter Spleiß‑ und OTDR‑Messtechnik, sauberer Dokumentation und kurzen Reaktionszeiten.
+          </p>
+          <div class="mt-6 flex flex-col sm:flex-row gap-3">
+            <a href="tel:+49-0000-000000" class="inline-flex items-center justify-center gap-2 rounded-2xl bg-slate-900 text-slate-50 hover:bg-slate-900/90 h-10 px-4 py-2 text-sm font-medium transition">
+              <i data-lucide="zap" class="h-4 w-4"></i> Störungsdienst anrufen
+            </a>
+            <a href="#leistungen" class="inline-flex items-center justify-center gap-2 rounded-2xl border border-slate-200 bg-white hover:bg-slate-100 hover:text-slate-900 h-10 px-4 py-2 text-sm font-medium transition">
+              <i data-lucide="wrench" class="h-4 w-4"></i> Unsere Leistungen
+            </a>
+          </div>
+          <ul class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-slate-700">
+            <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="h-4 w-4 text-orange-600"></i>24/7 Rufbereitschaft (SLA‑fähig)</li>
+            <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="h-4 w-4 text-orange-600"></i>Erfahrung aus Entstörung & Ausbau</li>
+            <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="h-4 w-4 text-orange-600"></i>OTDR, Dämpfungsmessung, Doku</li>
+            <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="h-4 w-4 text-orange-600"></i>First‑Time‑Fix Fokus</li>
+          </ul>
+        </div>
+        <div class="relative">
+          <div class="aspect-[4/3] rounded-2xl border bg-white/70 backdrop-blur p-4 grid grid-cols-2 gap-4 shadow-xl">
+            <!-- Card 1 -->
+            <div class="rounded-xl border border-slate-200 bg-white text-slate-950 shadow-sm">
+              <div class="flex flex-col space-y-1.5 p-6 pb-2">
+                <h3 class="text-base font-semibold leading-none tracking-tight flex items-center gap-2">
+                  <i data-lucide="network" class="h-4 w-4"></i> FTTx‑Installationen
+                </h3>
+              </div>
+              <div class="p-6 pt-0 text-sm text-slate-600">Hausanschlüsse, ONT/NT, Patchen, Inbetriebnahme, Doku</div>
+            </div>
+            <!-- Card 2 -->
+            <div class="rounded-xl border border-slate-200 bg-white text-slate-950 shadow-sm">
+              <div class="flex flex-col space-y-1.5 p-6 pb-2">
+                <h3 class="text-base font-semibold leading-none tracking-tight flex items-center gap-2">
+                  <i data-lucide="wrench" class="h-4 w-4"></i> Entstörung
+                </h3>
+              </div>
+              <div class="p-6 pt-0 text-sm text-slate-600">NE3/NE4, Muffen, Spleiße, Fehlerortung, Provisorien</div>
+            </div>
+            <!-- Card 3 -->
+            <div class="rounded-xl border border-slate-200 bg-white text-slate-950 shadow-sm">
+              <div class="flex flex-col space-y-1.5 p-6 pb-2">
+                <h3 class="text-base font-semibold leading-none tracking-tight flex items-center gap-2">
+                  <i data-lucide="gauge" class="h-4 w-4"></i> Messtechnik
+                </h3>
+              </div>
+              <div class="p-6 pt-0 text-sm text-slate-600">OTDR, Dämpfung, Protokolle (PDF), Übergabe</div>
+            </div>
+            <!-- Card 4 -->
+            <div class="rounded-xl border border-slate-200 bg-white text-slate-950 shadow-sm">
+              <div class="flex flex-col space-y-1.5 p-6 pb-2">
+                <h3 class="text-base font-semibold leading-none tracking-tight flex items-center gap-2">
+                  <i data-lucide="shield-check" class="h-4 w-4"></i> SLA & Doku
+                </h3>
+              </div>
+              <div class="p-6 pt-0 text-sm text-slate-600">SLA‑konforme Reaktionszeiten, Foto‑/Strecken‑Doku</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Leistungen -->
+    <section id="leistungen" class="py-16 border-t">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mb-8">
+          <h2 class="text-3xl font-bold tracking-tight">Leistungen</h2>
+          <p class="mt-2 text-slate-600">Von der Hauszuführung bis zur Störungsbehebung – wir decken den kompletten NE3/NE4‑Bereich ab.</p>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Service Card 1 -->
+          <div class="rounded-2xl border border-slate-200 bg-white text-slate-950 shadow-sm">
+            <div class="flex flex-col space-y-1.5 p-6 pb-2">
+              <h3 class="text-lg font-semibold leading-none tracking-tight flex items-center gap-2">
+                <i data-lucide="wrench" class="h-5 w-5"></i>Entstörung 24/7
+              </h3>
+              <p class="text-sm text-slate-500">Schnelle Fehlerlokalisierung und Behebung, provisorische Wiederherstellung, Nacharbeit und Abschluss‑Doku.</p>
+            </div>
+            <div class="p-6 pt-0">
+              <div class="flex items-center gap-3 text-sm text-slate-600">
+                <i data-lucide="badge-check" class="h-4 w-4"></i> Qualitätsgesichert
+              </div>
+            </div>
+          </div>
+          <!-- Service Card 2 -->
+          <div class="rounded-2xl border border-slate-200 bg-white text-slate-950 shadow-sm">
+            <div class="flex flex-col space-y-1.5 p-6 pb-2">
+              <h3 class="text-lg font-semibold leading-none tracking-tight flex items-center gap-2">
+                <i data-lucide="network" class="h-5 w-5"></i>FTTx‑Montage
+              </h3>
+              <p class="text-sm text-slate-500">Spleißen, Patchen, ONT/NT‑Einbau, Inbetriebnahme, Labeling und Abschlussmessungen.</p>
+            </div>
+            <div class="p-6 pt-0">
+              <div class="flex items-center gap-3 text-sm text-slate-600">
+                <i data-lucide="badge-check" class="h-4 w-4"></i> Qualitätsgesichert
+              </div>
+            </div>
+          </div>
+          <!-- Service Card 3 -->
+          <div class="rounded-2xl border border-slate-200 bg-white text-slate-950 shadow-sm">
+            <div class="flex flex-col space-y-1.5 p-6 pb-2">
+              <h3 class="text-lg font-semibold leading-none tracking-tight flex items-center gap-2">
+                <i data-lucide="gauge" class="h-5 w-5"></i>Messtechnik
+              </h3>
+              <p class="text-sm text-slate-500">OTDR‑ und Dämpfungsmessungen inkl. Protokollen als PDF sowie Messpunkt‑Kennzeichnung.</p>
+            </div>
+            <div class="p-6 pt-0">
+              <div class="flex items-center gap-3 text-sm text-slate-600">
+                <i data-lucide="badge-check" class="h-4 w-4"></i> Qualitätsgesichert
+              </div>
+            </div>
+          </div>
+          <!-- Service Card 4 -->
+          <div class="rounded-2xl border border-slate-200 bg-white text-slate-950 shadow-sm">
+            <div class="flex flex-col space-y-1.5 p-6 pb-2">
+              <h3 class="text-lg font-semibold leading-none tracking-tight flex items-center gap-2">
+                <i data-lucide="truck" class="h-5 w-5"></i>Hausanschluss & Muffen
+              </h3>
+              <p class="text-sm text-slate-500">Muffenbau, Steckerkonfektion, Abdichtung, Reinigung, Schutzrohr, Kennzeichnung.</p>
+            </div>
+            <div class="p-6 pt-0">
+              <div class="flex items-center gap-3 text-sm text-slate-600">
+                <i data-lucide="badge-check" class="h-4 w-4"></i> Qualitätsgesichert
+              </div>
+            </div>
+          </div>
+          <!-- Service Card 5 -->
+          <div class="rounded-2xl border border-slate-200 bg-white text-slate-950 shadow-sm">
+            <div class="flex flex-col space-y-1.5 p-6 pb-2">
+              <h3 class="text-lg font-semibold leading-none tracking-tight flex items-center gap-2">
+                <i data-lucide="file-spreadsheet" class="h-5 w-5"></i>Dokumentation
+              </h3>
+              <p class="text-sm text-slate-500">Fotodoku, Messprotokolle, Spleißpläne, Übergabemappen und digitales Archiv.</p>
+            </div>
+            <div class="p-6 pt-0">
+              <div class="flex items-center gap-3 text-sm text-slate-600">
+                <i data-lucide="badge-check" class="h-4 w-4"></i> Qualitätsgesichert
+              </div>
+            </div>
+          </div>
+          <!-- Service Card 6 -->
+          <div class="rounded-2xl border border-slate-200 bg-white text-slate-950 shadow-sm">
+            <div class="flex flex-col space-y-1.5 p-6 pb-2">
+              <h3 class="text-lg font-semibold leading-none tracking-tight flex items-center gap-2">
+                <i data-lucide="clock" class="h-5 w-5"></i>SLA & Bereitschaft
+              </h3>
+              <p class="text-sm text-slate-500">Definierte Reaktionszeiten, Eskalationspfade, Rufbereitschaft und Reporting.</p>
+            </div>
+            <div class="p-6 pt-0">
+              <div class="flex items-center gap-3 text-sm text-slate-600">
+                <i data-lucide="badge-check" class="h-4 w-4"></i> Qualitätsgesichert
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Vorteile / USP -->
+    <section id="vorteile" class="py-16 bg-slate-900 text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mb-10">
+          <h2 class="text-3xl font-bold">Warum wir</h2>
+          <p class="mt-2 text-slate-300">Praktische Erfahrung aus Ausbau und Entstörung kombiniert mit zertifizierter Messtechnik – für Ergebnisse, die halten.</p>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-white/5 border border-white/10 rounded-2xl p-5">
+            <p class="font-semibold">Schnelle Reaktion</p>
+            <p class="text-sm text-slate-300 mt-1">Kurze Anfahrten, klare Prozesse, Ersatzmaterial auf dem Fahrzeug.</p>
+          </div>
+          <div class="bg-white/5 border border-white/10 rounded-2xl p-5">
+            <p class="font-semibold">Zertifizierte Technik</p>
+            <p class="text-sm text-slate-300 mt-1">Kalibrierte OTDR‑Geräte, hochwertige Spleißgeräte, geprüfte Messkabel.</p>
+          </div>
+          <div class="bg-white/5 border border-white/10 rounded-2xl p-5">
+            <p class="font-semibold">Saubere Doku</p>
+            <p class="text-sm text-slate-300 mt-1">Messprotokolle (PDF), Fotodoku und Spleißpläne – prüffähig & nachvollziehbar.</p>
+          </div>
+          <div class="bg-white/5 border border-white/10 rounded-2xl p-5">
+            <p class="font-semibold">First‑Time‑Fix</p>
+            <p class="text-sm text-slate-300 mt-1">Ziel: Problem beim ersten Einsatz nachhaltig lösen, nicht nur provisorisch.</p>
+          </div>
+          <div class="bg-white/5 border border-white/10 rounded-2xl p-5">
+            <p class="font-semibold">SLA‑fähig</p>
+            <p class="text-sm text-slate-300 mt-1">Definierte Reaktions‑ und Wiederherstellungszeiten, Reporting je Ticket.</p>
+          </div>
+          <div class="bg-white/5 border border-white/10 rounded-2xl p-5">
+            <p class="font-semibold">Faires Preisblatt</p>
+            <p class="text-sm text-slate-300 mt-1">Transparente Positionen: Arbeitszeit, Nacht/Sonn‑Zuschläge, Anfahrt, Material.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Region -->
+    <section id="region" class="py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-8 items-start">
+          <div>
+            <h2 class="text-3xl font-bold tracking-tight">Region & Verfügbarkeit</h2>
+            <p class="mt-2 text-slate-600">Fokus: Niedersachsen & Bremen – Startkern Elbe‑Weser. Weitere Einsätze nach Absprache.</p>
+            <ul class="mt-6 space-y-2 text-sm text-slate-700">
+              <li class="flex items-center gap-2"><i data-lucide="map-pin" class="h-4 w-4 text-orange-600"></i> Elbe‑Weser‑Dreieck (Startregion)</li>
+              <li class="flex items-center gap-2"><i data-lucide="map-pin" class="h-4 w-4 text-orange-600"></i> Bremen & Umland</li>
+              <li class="flex items-center gap-2"><i data-lucide="map-pin" class="h-4 w-4 text-orange-600"></i> Niedersachsen – nach Verfügbarkeit</li>
+            </ul>
+          </div>
+          <div class="rounded-2xl border border-slate-200 bg-white text-slate-950 shadow-sm">
+            <div class="flex flex-col space-y-1.5 p-6">
+              <h3 class="text-2xl font-semibold leading-none tracking-tight flex items-center gap-2">
+                <i data-lucide="link" class="h-5 w-5"></i> Typische Einsatzfälle
+              </h3>
+              <p class="text-sm text-slate-500">So unterstützen wir Netzbetreiber, Tiefbauer & Geschäftskunden.</p>
+            </div>
+            <div class="p-6 pt-0">
+              <ol class="list-decimal list-inside space-y-2 text-slate-700">
+                <li>FTTH‑Hausanschluss – Einzug, Spleißen, ONT‑Montage, Messung, Doku</li>
+                <li>Leitungsstörung – Fehlerortung, Muffen‑Reparatur, Temporär‑Wiederherstellung</li>
+                <li>Übergabepunkt/POP – Patchen, Labeling, Inbetriebnahme</li>
+                <li>Messkampagnen – OTDR‑Trassenmessung, Dämpfung, Protokolle</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Zertifikate -->
+    <section id="zert" class="py-16 bg-slate-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold tracking-tight mb-8">Zertifikate & Compliance</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="rounded-2xl border border-slate-200 bg-white text-slate-950 shadow-sm">
+            <div class="flex flex-col space-y-1.5 p-6 pb-2">
+              <h3 class="text-lg font-semibold leading-none tracking-tight flex items-center gap-2">
+                <i data-lucide="badge-check" class="h-5 w-5 text-orange-600"></i> DGUV Vorschrift 3
+              </h3>
+              <p class="text-sm text-slate-500">Unterweisungen & Prüfungen dokumentiert</p>
+            </div>
+          </div>
+          <div class="rounded-2xl border border-slate-200 bg-white text-slate-950 shadow-sm">
+            <div class="flex flex-col space-y-1.5 p-6 pb-2">
+              <h3 class="text-lg font-semibold leading-none tracking-tight flex items-center gap-2">
+                <i data-lucide="badge-check" class="h-5 w-5 text-orange-600"></i> PSA & Arbeitssicherheit
+              </h3>
+              <p class="text-sm text-slate-500">Gefährdungsbeurteilung, Unterweisung, Nachweise</p>
+            </div>
+          </div>
+          <div class="rounded-2xl border border-slate-200 bg-white text-slate-950 shadow-sm">
+            <div class="flex flex-col space-y-1.5 p-6 pb-2">
+              <h3 class="text-lg font-semibold leading-none tracking-tight flex items-center gap-2">
+                <i data-lucide="badge-check" class="h-5 w-5 text-orange-600"></i> Fachspez. Nachweise
+              </h3>
+              <p class="text-sm text-slate-500">Spleiß‑/Messtechnik, ggf. Schaltberechtigung</p>
+            </div>
+          </div>
+          <div class="rounded-2xl border border-slate-200 bg-white text-slate-950 shadow-sm">
+            <div class="flex flex-col space-y-1.5 p-6 pb-2">
+              <h3 class="text-lg font-semibold leading-none tracking-tight flex items-center gap-2">
+                <i data-lucide="badge-check" class="h-5 w-5 text-orange-600"></i> Datenschutz (TOMs)
+              </h3>
+              <p class="text-sm text-slate-500">Einsatz beim Endkunden, Foto‑/Messdaten DSGVO‑konform</p>
+            </div>
+          </div>
+          <div class="rounded-2xl border border-slate-200 bg-white text-slate-950 shadow-sm">
+            <div class="flex flex-col space-y-1.5 p-6 pb-2">
+              <h3 class="text-lg font-semibold leading-none tracking-tight flex items-center gap-2">
+                <i data-lucide="badge-check" class="h-5 w-5 text-orange-600"></i> Fahrzeuge & Ausrüstung
+              </h3>
+              <p class="text-sm text-slate-500">Wartung, Kalibrierung, Prüfprotokolle</p>
+            </div>
+          </div>
+          <div class="rounded-2xl border border-slate-200 bg-white text-slate-950 shadow-sm">
+            <div class="flex flex-col space-y-1.5 p-6 pb-2">
+              <h3 class="text-lg font-semibold leading-none tracking-tight flex items-center gap-2">
+                <i data-lucide="badge-check" class="h-5 w-5 text-orange-600"></i> Präqualifikationen
+              </h3>
+              <p class="text-sm text-slate-500">Warengruppen NE3/NE4 nach Auftraggeber</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Preise (Teaser) -->
+    <section id="preise" class="py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mb-8">
+          <h2 class="text-3xl font-bold tracking-tight">Preise & SLA</h2>
+          <p class="mt-2 text-slate-600">Transparente Positionen – detailliertes Preisblatt auf Anfrage. Nacht/Sonn‑Zuschläge, Anfahrt, Material gemäß LV.</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6">
+          <!-- Price Card 1 -->
+          <div class="rounded-2xl border border-slate-200 bg-white text-slate-950 shadow-sm">
+            <div class="flex flex-col space-y-1.5 p-6 pb-2">
+              <h3 class="text-xl font-semibold leading-none tracking-tight flex items-center gap-2">Standard</h3>
+              <p class="text-sm text-slate-500 capitalize">werktags</p>
+            </div>
+            <div class="p-6 pt-0">
+              <ul class="space-y-2 text-sm text-slate-700">
+                <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="h-4 w-4 text-orange-600"></i> Techniker (Std)</li>
+                <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="h-4 w-4 text-orange-600"></i> Anfahrtspauschale</li>
+                <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="h-4 w-4 text-orange-600"></i> Doku & Protokolle</li>
+              </ul>
+            </div>
+          </div>
+          <!-- Price Card 2 -->
+          <div class="rounded-2xl border border-slate-200 bg-white text-slate-950 shadow-sm">
+            <div class="flex flex-col space-y-1.5 p-6 pb-2">
+              <h3 class="text-xl font-semibold leading-none tracking-tight flex items-center gap-2">Express</h3>
+              <p class="text-sm text-slate-500 capitalize">innerh. 4 Std</p>
+            </div>
+            <div class="p-6 pt-0">
+              <ul class="space-y-2 text-sm text-slate-700">
+                <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="h-4 w-4 text-orange-600"></i> Priorisierte Entstörung</li>
+                <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="h-4 w-4 text-orange-600"></i> SLA‑Reaktionszeit</li>
+                <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="h-4 w-4 text-orange-600"></i> Hotline inkl.</li>
+              </ul>
+            </div>
+          </div>
+          <!-- Price Card 3 (Featured) -->
+          <div class="rounded-2xl border-orange-300 shadow-lg border bg-white text-slate-950">
+            <div class="flex flex-col space-y-1.5 p-6 pb-2">
+              <h3 class="text-xl font-semibold leading-none tracking-tight flex items-center gap-2">
+                24/7 <span class="text-xs font-normal text-orange-600">Empfohlen</span>
+              </h3>
+              <p class="text-sm text-slate-500 capitalize">Nacht/Feiertag</p>
+            </div>
+            <div class="p-6 pt-0">
+              <ul class="space-y-2 text-sm text-slate-700">
+                <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="h-4 w-4 text-orange-600"></i> Rufbereitschaft</li>
+                <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="h-4 w-4 text-orange-600"></i> Zuschläge gemäß LV</li>
+                <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="h-4 w-4 text-orange-600"></i> Bericht binnen 24h</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="mt-6">
+          <a href="#angebot" class="inline-flex items-center justify-center gap-2 rounded-2xl bg-slate-900 text-slate-50 hover:bg-slate-900/90 h-10 px-4 py-2 text-sm font-medium transition">
+            <i data-lucide="file-spreadsheet" class="h-4 w-4"></i> Preisblatt anfordern
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Prozess -->
+    <section class="py-16 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold tracking-tight mb-8">So arbeiten wir</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          <!-- Step 1 -->
+          <div class="p-6 border rounded-2xl bg-slate-50">
+            <div class="h-8 w-8 rounded-full bg-slate-900 text-white grid place-items-center font-semibold">1</div>
+            <p class="mt-3 font-semibold">Ticket/Anfrage</p>
+            <p class="text-sm text-slate-600 mt-1">Eingang via Hotline oder E‑Mail, SLA‑Check, Terminierung</p>
+          </div>
+          <!-- Step 2 -->
+          <div class="p-6 border rounded-2xl bg-slate-50">
+            <div class="h-8 w-8 rounded-full bg-slate-900 text-white grid place-items-center font-semibold">2</div>
+            <p class="mt-3 font-semibold">Einsatz</p>
+            <p class="text-sm text-slate-600 mt-1">Fehlerortung, Behebung/Provisorium, Messung, Abnahme</p>
+          </div>
+          <!-- Step 3 -->
+          <div class="p-6 border rounded-2xl bg-slate-50">
+            <div class="h-8 w-8 rounded-full bg-slate-900 text-white grid place-items-center font-semibold">3</div>
+            <p class="mt-3 font-semibold">Dokumentation</p>
+            <p class="text-sm text-slate-600 mt-1">Protokolle, Fotodoku, Spleißplan, Übergabe & Reporting</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kontakt / Angebot -->
+    <section id="angebot" class="py-16 bg-slate-900 text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-10 items-center">
+          <div>
+            <h2 class="text-3xl font-bold">Angebot anfragen</h2>
+            <p class="mt-2 text-slate-300">Schick uns kurz dein Vorhaben oder die Störungsnummer – wir melden uns fix.</p>
+            <div class="mt-6 flex flex-col gap-3 text-sm">
+              <p class="flex items-center gap-2">
+                <i data-lucide="phone" class="h-4 w-4 text-orange-400"></i> Hotline: 
+                <a href="tel:+49-0000-000000" class="underline decoration-orange-400">+49 0000 000000</a>
+              </p>
+              <p class="flex items-center gap-2">
+                <i data-lucide="mail" class="h-4 w-4 text-orange-400"></i> E‑Mail: 
+                <a href="mailto:kontakt@ihre-domain.de" class="underline decoration-orange-400">kontakt@ihre-domain.de</a>
+              </p>
+            </div>
+          </div>
+          <div class="rounded-2xl bg-white text-slate-800 border border-slate-200 shadow-sm">
+            <div class="flex flex-col space-y-1.5 p-6">
+              <h3 class="text-2xl font-semibold leading-none tracking-tight">Kurzes Formular</h3>
+              <p class="text-sm text-slate-500">Wir antworten in der Regel am selben Werktag.</p>
+            </div>
+            <div class="p-6 pt-0">
+              <!-- Success Message (hidden by default) -->
+              <div id="form-success" class="p-4 border rounded-xl bg-orange-50 text-orange-800 items-start gap-3">
+                <i data-lucide="check-circle-2" class="h-5 w-5 mt-0.5"></i>
+                <div>
+                  <p class="font-medium">Danke! Deine Anfrage wurde lokal erfasst.</p>
+                  <p class="text-sm">(Dieses Demo‑Formular sendet keine Daten. Bitte Mail/Hotline nutzen.)</p>
+                </div>
+              </div>
+              
+              <!-- Contact Form -->
+              <form id="contact-form" class="grid gap-4">
+                <div>
+                  <label class="text-sm font-medium">Name</label>
+                  <input type="text" placeholder="Vor- und Nachname" required class="flex h-10 w-full rounded-md border border-slate-200 bg-white px-3 py-2 text-sm ring-offset-white file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-slate-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2">
+                </div>
+                <div class="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <label class="text-sm font-medium">E‑Mail</label>
+                    <input type="email" placeholder="name@firma.de" required class="flex h-10 w-full rounded-md border border-slate-200 bg-white px-3 py-2 text-sm ring-offset-white file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-slate-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2">
+                  </div>
+                  <div>
+                    <label class="text-sm font-medium">Telefon</label>
+                    <input type="tel" placeholder="+49 …" class="flex h-10 w-full rounded-md border border-slate-200 bg-white px-3 py-2 text-sm ring-offset-white file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-slate-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2">
+                  </div>
+                </div>
+                <div>
+                  <label class="text-sm font-medium">Nachricht</label>
+                  <textarea placeholder="Kurzbeschreibung (z. B. Störung, Adresse, gewünschte Zeit)…" rows="4" required class="flex min-h-[80px] w-full rounded-md border border-slate-200 bg-white px-3 py-2 text-sm ring-offset-white placeholder:text-slate-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2"></textarea>
+                </div>
+                <button type="submit" class="inline-flex items-center justify-center rounded-2xl bg-slate-900 text-slate-50 hover:bg-slate-900/90 h-10 px-4 py-2 text-sm font-medium transition">Abschicken</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="kontakt" class="py-12 border-t bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-8">
+        <div>
+          <div class="flex items-center gap-3">
+            <img src="assets/bn-fiberconnect-logo.png" alt="BN Fiber Connect GmbH Logo" class="h-10 w-auto object-contain">
+            <p class="font-semibold">BN Fiber Connect GmbH</p>
+          </div>
+          <p class="mt-2 text-sm text-slate-600">Ihr Partner für Entstörung, FTTx‑Montage und Messtechnik.</p>
+        </div>
+        <div>
+          <p class="font-semibold mb-2">Kontakt</p>
+          <p class="text-sm text-slate-600">Musterstraße 1 · 00000 Musterstadt</p>
+          <p class="text-sm text-slate-600">Tel. <a class="underline" href="tel:+49-0000-000000">+49 0000 000000</a></p>
+          <p class="text-sm text-slate-600">E‑Mail <a class="underline" href="mailto:kontakt@ihre-domain.de">kontakt@ihre-domain.de</a></p>
+        </div>
+        <div>
+          <p class="font-semibold mb-2">Rechtliches</p>
+          <ul class="text-sm text-slate-600 space-y-1">
+            <li><a href="#" class="underline">Impressum</a></li>
+            <li><a href="#" class="underline">Datenschutz</a></li>
+            <li><a href="#" class="underline">AGB</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 text-xs text-slate-500">
+        © <span id="current-year"></span> BN Fiber Connect GmbH
+      </div>
+    </footer>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+    
+    // Set current year in footer
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+    
+    // Handle form submission
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Hide form and show success message
+      this.classList.add('submitted');
+      document.getElementById('form-success').classList.add('show');
+      
+      // Reinitialize icons in success message
+      lucide.createIcons();
+    });
+  </script>
+</body>
+</html>
+
